@@ -1,3 +1,13 @@
 {
-  "tasks": []
+  "tasks": [
+    {
+      "username": "Jonny",
+      "role": "front-end-developer",
+      "description": "do frontend work pls",
+      "dueDate": "2025-03-14",
+      "id": 1741879188074,
+      "isComplete": false,
+      "timeStamp": "03/13/2025"
+    }
+  ]
 }

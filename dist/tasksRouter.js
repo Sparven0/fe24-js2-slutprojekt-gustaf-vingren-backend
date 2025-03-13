@@ -12,12 +12,29 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.tasksRouter = void 0;
 const express_1 = require("express");
 const tasksFunctions_1 = require("./tasksFunctions");
-const membersPath = "./src/membersDB.json";
+const express_validator_1 = require("express-validator");
 const tasksFunctions_2 = require("./tasksFunctions");
 const tasksFunctions_3 = require("./tasksFunctions");
 const tasksFunctions_4 = require("./tasksFunctions");
 const tasksFunctions_5 = require("./tasksFunctions");
 exports.tasksRouter = (0, express_1.Router)();
+const taskValidation = [
+    (0, express_validator_1.body)("username").isString(),
+    (0, express_validator_1.body)("role").isString(),
+    (0, express_validator_1.body)("description").isString(),
+    (0, express_validator_1.body)("dueDate").isString(),
+    (0, express_validator_1.body)("id").isNumeric(),
+    (0, express_validator_1.body)("isComplete").isBoolean(),
+    (0, express_validator_1.body)("timeStamp").isString(),
+];
+const handleValidationErrors = (req, res, next) => {
+    const errors = (0, express_validator_1.validationResult)(req);
+    if (!errors.isEmpty()) {
+        res.status(400).json({ errors: errors.array() });
+        return true;
+    }
+    return false;
+};
 // läser alla tasks
 exports.tasksRouter.get("/tasks/:username", (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -42,7 +59,9 @@ exports.tasksRouter.get("/tasks", (req, res, next) => __awaiter(void 0, void 0, 
     }
 }));
 // postar en ny task
-exports.tasksRouter.post("/new-task", (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+exports.tasksRouter.post("/new-task", taskValidation, (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    if (handleValidationErrors(req, res, next))
+        return;
     try {
         const task = req.body;
         yield (0, tasksFunctions_2.writeTask)(task);
@@ -54,7 +73,9 @@ exports.tasksRouter.post("/new-task", (req, res, next) => __awaiter(void 0, void
     }
 }));
 // uppdaterar isComplete
-exports.tasksRouter.patch("/tasks/:taskID", (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+exports.tasksRouter.patch("/tasks/:taskID", taskValidation, (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    if (handleValidationErrors(req, res, next))
+        return;
     try {
         const { taskID } = req.params;
         const { isComplete } = req.body;

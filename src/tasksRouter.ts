@@ -1,13 +1,33 @@
 import { Router, NextFunction, Request, Response } from "express";
 import { readTasks } from "./tasksFunctions";
-import fs, { write } from "fs";
-const membersPath = "./src/membersDB.json";
+import { validationResult, body } from "express-validator";
 import { writeTask } from "./tasksFunctions";
 import { updateIsCompleted } from "./tasksFunctions";
 import { deleteTask } from "./tasksFunctions";
 import { updateAssignedUser } from "./tasksFunctions";
 
+
 export const tasksRouter = Router();
+
+const taskValidation = [
+    body("username").isString(),
+    body("role").isString(),
+    body("description").isString(),
+    body("dueDate").isString(),
+    body("id").isNumeric(),
+    body("isComplete").isBoolean(),
+    body("timeStamp").isString(),
+
+];
+
+const handleValidationErrors = (req: Request, res: Response, next: NextFunction): boolean => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        res.status(400).json({ errors: errors.array() });
+        return true;
+    }
+    return false;
+};
 
 // läser alla tasks
 
@@ -42,7 +62,9 @@ tasksRouter.get("/tasks", async (req: Request, res: Response, next: NextFunction
 
 tasksRouter.post(
     "/new-task",
+    taskValidation,
     async (req: Request, res: Response, next: NextFunction): Promise<any> => {
+        if(handleValidationErrors(req, res, next)) return;
         try {
             const task = req.body;
             await writeTask(task);
@@ -58,7 +80,9 @@ tasksRouter.post(
 
 tasksRouter.patch(
     "/tasks/:taskID",
+    taskValidation,
     async (req: Request, res: Response, next: NextFunction): Promise<any> => {
+        if(handleValidationErrors(req, res, next)) return;
         try {
             const { taskID } = req.params;
             const { isComplete } = req.body;
@@ -119,4 +143,3 @@ tasksRouter.use((err: any, req: Request, res: Response, next: NextFunction) => {
     console.error("Error:", err);
     res.status(500).json({ message: "Internal Server Error" });
 });
-
