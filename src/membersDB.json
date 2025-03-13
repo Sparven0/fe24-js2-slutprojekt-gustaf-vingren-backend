@@ -1,0 +1,22 @@
+{
+  "members": [
+    {
+      "username": "Jonny",
+      "email": "somemail@mail.com",
+      "role": "front-end-developer",
+      "id": 1741855795446
+    },
+    {
+      "username": "Conny",
+      "email": "mail@live.com",
+      "role": "back-end-developer",
+      "id": 1741855818762
+    },
+    {
+      "username": "Lonny",
+      "email": "nomail@mail.com",
+      "role": "UX-designer",
+      "id": 1741855851096
+    }
+  ]
+}
