@@ -80,9 +80,7 @@ tasksRouter.post(
 
 tasksRouter.patch(
     "/tasks/:taskID",
-    taskValidation,
     async (req: Request, res: Response, next: NextFunction): Promise<any> => {
-        if(handleValidationErrors(req, res, next)) return;
         try {
             const { taskID } = req.params;
             const { isComplete } = req.body;
