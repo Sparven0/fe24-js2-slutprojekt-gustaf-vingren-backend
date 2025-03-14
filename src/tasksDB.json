@@ -8,6 +8,51 @@
       "id": 1741879188074,
       "isComplete": false,
       "timeStamp": "03/13/2025"
+    },
+    {
+      "username": "Conny",
+      "role": "back-end-developer",
+      "description": "Move app to AWS tonight",
+      "dueDate": "2025-03-14",
+      "id": 1852980299185,
+      "isComplete": false,
+      "timeStamp": "03/13/2025"
+    },
+    {
+      "username": "not-assigned",
+      "role": "UX-designer",
+      "description": "Design brand new UI for the whole app",
+      "dueDate": "2025-03-28",
+      "id": 1953092400296,
+      "isComplete": false,
+      "timeStamp": "03/13/2025"
+    },
+    {
+      "username": "not-assigned",
+      "role": "back-end-developer",
+      "description": "Find an apprentice to assist Conny ASAP",
+      "dueDate": "2025-03-17",
+      "id": 1064243533418,
+      "isComplete": false,
+      "timeStamp": "03/13/2025"
+    },
+    {
+      "username": "not-assigned",
+      "role": "front-end-developer",
+      "description": "Find an apprentice to assist Jonny ASAP",
+      "dueDate": "2025-03-14",
+      "id": 11964796312962,
+      "isComplete": false,
+      "timeStamp": "03/17/2025"
+    },
+    {
+      "username": "Jonny",
+      "role": "front-end-developer",
+      "description": "Try making the sidebar better looking",
+      "dueDate": "2025-03-14",
+      "id": 1741939153751,
+      "isComplete": false,
+      "timeStamp": "03/13/2025"
     }
   ]
 }
