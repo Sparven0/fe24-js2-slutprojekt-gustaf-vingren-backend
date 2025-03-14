@@ -1,6 +1,7 @@
 {
   "tasks": [
     {
+      "title": "Design new UI",
       "username": "Jonny",
       "role": "front-end-developer",
       "description": "do frontend work pls",
@@ -10,6 +11,7 @@
       "timeStamp": "03/13/2025"
     },
     {
+      "title": "Design new UI",
       "username": "Conny",
       "role": "back-end-developer",
       "description": "Move app to AWS tonight",
@@ -19,6 +21,7 @@
       "timeStamp": "03/13/2025"
     },
     {
+      "title": "Design new UI",
       "username": "not-assigned",
       "role": "UX-designer",
       "description": "Design brand new UI for the whole app",
@@ -28,6 +31,7 @@
       "timeStamp": "03/13/2025"
     },
     {
+      "title": "Design new UI",
       "username": "not-assigned",
       "role": "back-end-developer",
       "description": "Find an apprentice to assist Conny ASAP",
@@ -37,6 +41,7 @@
       "timeStamp": "03/13/2025"
     },
     {
+      "title": "Design new UI",
       "username": "not-assigned",
       "role": "front-end-developer",
       "description": "Find an apprentice to assist Jonny ASAP",
@@ -46,6 +51,7 @@
       "timeStamp": "03/17/2025"
     },
     {
+      "title": "Design new UI",
       "username": "Jonny",
       "role": "front-end-developer",
       "description": "Try making the sidebar better looking",
