@@ -1,3 +1,13 @@
+// Här sätts alla routers för alla endpoints relaterade till members up. 
+// Det görs med express-router.
+// Här implementeras även express-validationResults för att validera indata från användaren. 
+// 1. membersRouter: definierar en router för medlemmar och deras relaterade endpoints.
+// 2. memberValidation: definierar valideringsregler för medlemmars indata.
+// 3. handleValidationErrors: en funktion för att hantera valideringsfel och skicka tillbaka ett svar med felmeddelanden.
+
+
+
+
 import { Router, NextFunction, Request, Response } from "express";
 import { body } from "express-validator";
 import { readMembers, writeMember } from "./memberFunctions";

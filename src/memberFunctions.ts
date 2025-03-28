@@ -1,3 +1,8 @@
+
+// I denna filen finns funktioner för att läsa och skriva till json filen som innehåller medlemmarna.
+// Den läser filen samt skriver till den.
+
+
 import fs from 'fs/promises';
 const path = './src/membersDB.json';
 

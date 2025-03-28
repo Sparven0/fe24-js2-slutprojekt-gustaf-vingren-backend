@@ -1,3 +1,14 @@
+
+// Denna filen innehåller funktioner som hanterar ändringar av tasks.json filen.
+
+// 1. readTasks: läser tasks.json filen och returnerar dess innehåll som ett objekt. Om filen är tom returneras en tom array.
+// 2. writeTask: skriver en ny task till tasks.json filen. Om filen inte finns skapas den.
+// 3. updateIsCompleted: uppdaterar en tasks isComplete status i tasks.json filen.
+// 4. deleteTask: tar bort en task från tasks.json filen baserat på dess ID.
+// 5. updateAssignedUser: uppdaterar den tilldelade användaren för en task i tasks.json filen.
+// 6. handleFileError: hanterar fel som uppstår vid läsning eller skrivning av tasks.json filen.
+
+
 import fs from 'fs/promises';
 const path = './src/tasksDB.json';
 

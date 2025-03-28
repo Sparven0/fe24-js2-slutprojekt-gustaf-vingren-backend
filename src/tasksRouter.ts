@@ -1,3 +1,10 @@
+
+// Här sätts alla "endpoints" för tasks upp.
+// 1. tasksRouter: definierar en router för tasks och deras relaterade endpoints.
+// 2. taskValidation: definierar valideringsregler för tasks indata.
+// 3. handleValidationErrors: en funktion för att hantera valideringsfel och skicka tillbaka ett svar med felmeddelanden.
+
+
 import { Router, NextFunction, Request, Response } from "express";
 import { readTasks } from "./tasksFunctions";
 import { validationResult, body } from "express-validator";

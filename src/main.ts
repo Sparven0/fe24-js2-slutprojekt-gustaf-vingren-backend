@@ -1,3 +1,7 @@
+
+// Denna filen är serverns "entry point", här startas servers och alla routes laddas in samt middleware implementeras
+
+
 import express from "express";
 import { membersRouter } from './membersRouter';
 import { tasksRouter } from "./tasksRouter";
